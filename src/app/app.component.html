@@ -1,0 +1,40 @@
+
+<h1>custom pipes</h1>
+<h4>normal table here just use builtin pipes</h4>
+<table class="table">
+  <tr>
+    <th>name</th>
+
+    <th>city</th>
+    <th>pincode</th>
+    <th>date of birth</th>
+    <th>gender</th>
+  </tr>
+  <tr *ngFor="let u of user">
+    <td>{{u.name | uppercase}}</td>
+    <td>{{u.city| uppercase}}</td>
+    <td>{{u.code}}</td>
+    <td>{{u.dob | date:'fullDate'}}</td>
+    <td>{{u.gender | uppercase}}</td>
+  </tr>
+</table>
+<hr>
+<p>i want to change above table using custom pipes . whose gender is male MR. is added before those name and whose gender is female MS. is added before those name</p>
+<hr>
+<table class="table">
+  <tr>
+    <th>name</th>
+
+    <th>city</th>
+    <th>pincode</th>
+    <th>date of birth</th>
+    <th>gender</th>
+  </tr>
+  <tr *ngFor="let u of user">
+    <td>{{u.name| custom:u.gender | uppercase}}</td>
+    <td>{{u.city| uppercase}}</td>
+    <td>{{u.code}}</td>
+    <td>{{u.dob | date:'fullDate'}}</td>
+    <td>{{u.gender | uppercase}}</td>
+  </tr>
+</table>
